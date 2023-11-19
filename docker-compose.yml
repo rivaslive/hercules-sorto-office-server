@@ -15,10 +15,10 @@ services:
       - DB_USER=onlyoffice
       - AMQP_URI=amqp://guest:guest@onlyoffice-rabbitmq
       # Uncomment strings below to enable the JSON Web Token validation.
-      #- JWT_ENABLED=true
-      #- JWT_SECRET=secret
-      #- JWT_HEADER=Authorization
-      #- JWT_IN_BODY=true
+      - JWT_ENABLED=false
+#      - JWT_SECRET=oa6YkquJfc4yZOccHz7yjlbGIogpafUx
+#      - JWT_HEADER=Authorization
+#      - JWT_IN_BODY=true
     ports:
       - '80:80'
       - '443:443'
@@ -31,7 +31,7 @@ services:
        - /var/lib/onlyoffice/documentserver/App_Data/cache/files
        - /var/www/onlyoffice/documentserver-example/public/files
        - /usr/share/fonts
-       
+
   onlyoffice-rabbitmq:
     container_name: onlyoffice-rabbitmq
     image: rabbitmq
